@@ -30,7 +30,7 @@ jobs:
 
       - name: Read latest release
         id: get_latest_release
-        run: echo "release_tag=$(curl https://api.github.com/repos/Prowlarr/Prowlarr/releases/latest --silent | jq -r '.tag_name')" >> "$GITHUB_OUTPUT"
+        run: echo "release_tag=$(curl https://api.github.com/repos/Prowlarr/Prowlarr/releases/latest --silent | jq -r '.name')" >> "$GITHUB_OUTPUT"
         shell: bash
 
       - name: Build and push
